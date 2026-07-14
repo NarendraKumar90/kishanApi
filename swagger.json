@@ -6,10 +6,7 @@
     "description": "API documentation for Kishan Management System"
   },
   "servers": [
-    {
-      "url": "http://localhost:3000",
-      "description": "Local Server"
-    },
+
     {
       "url": "https://kishanapi-3rg7.onrender.com",
       "description": "Production Server"
