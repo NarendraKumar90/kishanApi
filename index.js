@@ -13,10 +13,17 @@ const app = express();
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger.json");
 
-//const app = express();
 
+
+// middleware
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
+
+// database connection
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+
+});
 
 // 2. Serve Swagger UI at /api-docs route seamlessly
 
