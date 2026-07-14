@@ -1,0 +1,162 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Kishan API",
+    "version": "1.0.0",
+    "description": "API documentation for Kishan Management System"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local Server"
+    },
+    {
+      "url": "https://rd-live.onrender.com",
+      "description": "Production Server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["Home"],
+        "summary": "Welcome Back Naren API !..",
+        "responses": {
+          "200": {
+            "description": "Welcome Naren !.."
+          }
+        }
+      }
+    },
+
+    "/items": {
+      "get": {
+        "tags": ["Items"],
+        "summary": "Get all items",
+        "responses": {
+          "200": {
+            "description": "Items fetched successfully"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+
+    "/kishan": {
+      "get": {
+        "tags": ["Kishan"],
+        "summary": "Get all kishan records",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+
+    "/tran": {
+      "get": {
+        "tags": ["Transaction"],
+        "summary": "Get all transaction records",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+
+    "/ttlpaid": {
+      "get": {
+        "tags": ["Summary"],
+        "summary": "Get total paid amount",
+        "responses": {
+          "200": {
+            "description": "Total paid amount"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+
+    "/paidamount/{kid}": {
+      "get": {
+        "tags": ["Summary"],
+        "summary": "Get paid amount by Kishan ID",
+        "parameters": [
+          {
+            "name": "kid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Kishan ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid amount"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+
+    "/totalsales": {
+      "get": {
+        "tags": ["Summary"],
+        "summary": "Get total sales",
+        "responses": {
+          "200": {
+            "description": "Total sales"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+
+    "/totaldue": {
+      "get": {
+        "tags": ["Summary"],
+        "summary": "Get total due amount",
+        "responses": {
+          "200": {
+            "description": "Total due"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+
+    "/kishancount": {
+      "get": {
+        "tags": ["Summary"],
+        "summary": "Get total number of Kishan records",
+        "responses": {
+          "200": {
+            "description": "Total count"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    }
+  }
+}
